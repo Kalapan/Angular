@@ -1,0 +1,23 @@
+.logo {
+  width: 100px;
+}
+
+q {
+  font-style: italic;
+  font-size: 1.2rem;
+  quotes: "« " " »";
+}
+p:hover{
+  color: blue;
+}
+h1:hover{
+  color: blue;
+}
+img {
+transition: transform .5s ease-in-out;
+transition: transform .5s ease-in-out;
+}
+img:hover {
+  transform: rotate(720deg);
+  transform: rotate(720deg);
+}

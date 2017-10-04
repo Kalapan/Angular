@@ -1,0 +1,35 @@
+<div class="container-fluid text-center"><br>
+  <div class="jumbotron">
+    <h1>
+      <img class="logo" src="http://www.punchcard.com/images/logo.png" alt="angular logo"/>
+      <span translate>Punch Time</span>
+    </h1>
+    <p>
+      <span translate>Fill out the following chart to log your time.</span>
+    </p>
+  </div>
+  <div class="text-left w3-row">
+    <div class="w3-cell w3-cell-top">
+      <form>
+        <div>First Name: <br/>
+          <input type="text" lass="form-control" [(ngModel)]="model._test_firstName" name="FirstName" id="_test_firstName"></div>
+        <div>Last Name: <br/>
+          <input type="text" lass="form-control" [(ngModel)]="model._test_lastName" name="LastName" id="_test_lastName"></div>
+        <div>Punch In Time: <br/>
+          <input type="text" lass="form-control" [(ngModel)]="model._punchInTime" name="PunchInTime" id="_punchInTime"></div>
+        <div>Punch Out Time: <br/>
+          <input type="text" lass="form-control" [(ngModel)]="model._punchOutTime" name="PunchOutTime" id="_punchOutTime"></div>
+        <button (click)="onCurrentDate()" value="Current Date">Current Punch In Time</button>
+        <button (click)="onCurrentDate2()" value="Current Date">Current Punch Out Time</button>
+        <input type="submit" (click)="onSubmit()" value="Add Punch Card">
+      </form>
+    </div>
+    <ul class="w3-ul w3-cell">
+      <li *ngFor="let punchCard of punchCardList; let i = index" class="w3-card, w3-animate-zoom">
+        <span class="w3-large"> Name: {{punchCard._test_firstName}} {{punchCard._test_lastName}}</span>
+        <span class="w3-large"> Punch In Time: {{punchCard._punchInTime | date:'medium' }} Punch Out Time: {{punchCard._punchOutTime | date:'medium' }}</span>
+        <input type="button" (click)="onDelete(punchCard,i)" value="X">
+      </li>
+    </ul>
+  </div>
+</div>
